@@ -1,0 +1,139 @@
+% Corder_Guy_Resume.tex
+% (c) Copyright 2015 Josh Wright
+% Adapted with permission
+
+\documentclass[12pt]{article}
+
+\usepackage{verbatim}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{outlines} % for outline
+\usepackage{paralist} % for compactitem (compact itemize)
+\usepackage{multicol} % for multicolumn layout
+\geometry{letterpaper, margin=0.5in, top=0.5in}
+
+
+\begin{document}
+\pagenumbering{gobble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 3-column header with title %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+\begin{minipage}{0.3\linewidth}
+  \begin{flushleft}
+    corder@tamu.edu\\
+    (512) 994 8895\\
+    \verb|jcguy.github.io|
+  \end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+  \begin{center}
+    {\Huge\textbf{Corder Guy}}
+  \end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+  \begin{flushright}
+    4341 FM 535 \\
+    Bastrop, TX 78602 \\
+  \end{flushright}
+\end{minipage}
+
+%%\vspace{-4px}
+
+%%%%%%%%%%%%%%%%%%
+%% main section %%
+%%%%%%%%%%%%%%%%%%
+\begin{flushleft}
+  \begin{outline}%[compactitem]
+
+    %%%%%%%%%%%%%%%%%%%%
+    %% spacing config %%
+    %%%%%%%%%%%%%%%%%%%%
+    % just in case I need even more space
+    \newlength{\upspacelength}
+    \setlength{\upspacelength}{-0.6px}
+    \newcommand{\upspace}{\vspace{\upspacelength}}
+    % section titles
+    \newcommand{\zzz}[1]{\upspace \0 \textbf{#1} \\ \vspace{-0.8\baselineskip} \hrulefill \vspace{-2px} \\ }
+    % \newcommand{\zzz}[1]{\0 \hspace{-1.25in} \textbf{#1} \vspace{-10px} }
+    % makes second-level itemize bullets instead of dashes
+    % \renewcommand\labelitemii{\labelitemi}
+    % redefine the sub-headings to inject our space-saver
+    \let\oldOne\1\let\oldTwo\2\let\oldThree\3\let\oldFour\4
+    \renewcommand{\1}{\upspace \oldOne  }
+    \renewcommand{\2}{\upspace \oldTwo  }
+    \renewcommand{\3}{\upspace \oldThree}
+    \renewcommand{\4}{\upspace \oldFour }
+
+
+    \zzz{Objective:}
+    \1 Seeking summer 2017 internship in Software Engineering, with particular interest in back-end development.
+
+    \zzz{Education:}
+    \1 \textbf{Texas A\&M University}, College Station, TX \hfill Fall 2014 - December 2018
+    \\ \textbf{Computer Science}, Bachelor of Science; Cybersecurity minor
+    \\ Graduation: \textbf{December 2018}
+    \\ GPA:  \textbf{3.2}/4.0
+    % \1 High School: \hfill Graduated May 2014
+    %   \2 \textbf{Home school}, GPA: \textbf{4.0}/4.0, including \textbf{Dual Credit} and \textbf{AP}
+
+    \zzz{Technical Skills:}
+    \1 Programming: 
+    \\
+    \vspace{-\baselineskip}\vspace{-\upspacelength}
+    \begin{tabularx}{\textwidth}{X X X X X X}
+      & C++   & Python & Java\upspace \\
+      & MATLAB& LaTeX & Git\upspace \\
+    \end{tabularx}
+    \vspace{-5px}\upspace
+    \1 
+    Windows, Linux
+    \hfill\labelitemi\hspace{1px}
+    Computer hardware servicing
+    \hfill\hfill
+    \zzz{Projects:}
+    \1 CSCE 121:  (Team of 4) \hfill Fall 2015 
+    \\ Designed and programmed a clone of Boggle in C++ using the FLTK graphics library. Included custom level sizes and persistent highscores
+    \1 ENGR 112: (Team of 16) \hfill Spring 2015
+    \\ Built a machine to read an input barcode and dispense the corresponding pellets autonomously 
+    \1 ENGR 111: (Team of 4) \hfill Fall 2014
+    \\ Built an autonomous robot to navigate a field with obstacles and perform tasks
+
+    \zzz{Work Experience:}
+    \1 \textbf{Teacher Retirement System of Texas, Austin, TX} \hfill Summer 2015
+    \\ \textbf{Technical Support Intern}
+    \\ Helped employees with computer- and network-related issues
+    \\ Prepared and deployed workstations for new and existing employees
+    \\ Monitored ongoing computer operations and alerted appropriate staff of problems
+
+    \zzz{Honors:}
+    \1 \textbf{TAMU Engineering Honors}
+    \1 Recipient of 4 scholarships funding 70\% of tuition:
+    % \\ 
+    \2 National Merit Scholar Recognition Scholarship
+    \2 National Merit Scholarship
+    \2 President's Endowed Scholarship
+    \2 TAMU CSCE Industrial Affiliate Program Scholarship
+
+    %%\zzz{Organizations:}
+    %%\1 
+    %%Aggie Coding Club
+    %%\hfill\labelitemi\hspace{1px}
+    %%MSC Aggie Cinema
+    %%\hfill\labelitemi\hspace{1px}
+    %%TAMU CSE Honors
+
+    \zzz{Notable Awards:}
+    \1 \textbf{Eagle Scout} project: educational garden outline ecological regions of Texas \hfill November 2013
+    \1 AWANA Games: 1\textsuperscript{st} place region-wide \hfill 2013
+    \1 FIRST Robotics Competition: 1\textsuperscript{st} place state-wide \hfill 2008 \hfill
+    % trailing hfill because otherwise it is too far to the right for no easily discernable reason
+
+  \end{outline}
+\end{flushleft}
+\end{document}
