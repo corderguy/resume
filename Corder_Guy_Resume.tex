@@ -12,7 +12,7 @@
 \usepackage{outlines} % for outline
 \usepackage{paralist} % for compactitem (compact itemize)
 \usepackage{multicol} % for multicolumn layout
-\geometry{letterpaper, margin=0.75in, top=0.75in}
+\geometry{letterpaper, margin=0.75in, top=0.5in}
 
 
 \begin{document}
@@ -22,23 +22,23 @@
 %% 3-column header with title %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \noindent
-\begin{minipage}{0.3\linewidth}
-  \begin{flushleft}
-    corder@tamu.edu\\
-    (512) 994 8895\\
-  \end{flushleft}
+\begin{minipage}{0.2\linewidth}
+    \begin{flushleft}
+        \verb|corder@tamu.edu|\\
+        \verb|corder.tech| \\
+    \end{flushleft}
 \end{minipage}
 \hfill
-\begin{minipage}{0.3\linewidth}
-  \begin{center}
-    {\Huge\textbf{Corder Guy}}
-  \end{center}
+\begin{minipage}{0.5\linewidth}
+    \begin{center}
+        {\Huge\textbf{James Corder Guy}}
+    \end{center}
 \end{minipage}
 \hfill
-\begin{minipage}{0.3\linewidth}
-  \begin{flushright}
-    \verb|corder.tech|
-  \end{flushright}
+\begin{minipage}{0.2\linewidth}
+    \begin{flushright}
+        \verb|512 994 8895|\\
+    \end{flushright}
 \end{minipage}
 
 %%\vspace{-4px}
@@ -47,95 +47,83 @@
 %% main section %%
 %%%%%%%%%%%%%%%%%%
 \begin{flushleft}
-  \begin{outline}[compactitem]
+    \begin{outline}[compactitem]
 
-    %%%%%%%%%%%%%%%%%%%%
-    %% spacing config %%
-    %%%%%%%%%%%%%%%%%%%%
-    % just in case I need even more space
-    \newlength{\upspacelength}
-    \setlength{\upspacelength}{-0.6px}
-    \newcommand{\upspace}{\vspace{\upspacelength}}
-    % section titles
-    \newcommand{\zzz}[1]{\upspace \0 \textbf{#1} \\ \vspace{-0.8\baselineskip} \hrulefill \vspace{-2px} \\ }
-    % \newcommand{\zzz}[1]{\0 \hspace{-1.25in} \textbf{#1} \vspace{-10px} }
-    % makes second-level itemize bullets instead of dashes
-    % \renewcommand\labelitemii{\labelitemi}
-    % redefine the sub-headings to inject our space-saver
-    \let\oldOne\1\let\oldTwo\2\let\oldThree\3\let\oldFour\4
-    \renewcommand{\1}{\upspace \oldOne  }
-    \renewcommand{\2}{\upspace \oldTwo  }
-    \renewcommand{\3}{\upspace \oldThree}
-    \renewcommand{\4}{\upspace \oldFour }
+        %%%%%%%%%%%%%%%%%%%%
+        %% spacing config %%
+        %%%%%%%%%%%%%%%%%%%%
+        \newlength{\upspacelength}
+        \setlength{\upspacelength}{-0.6px}
+        \newcommand{\upspace}{\vspace{\upspacelength}}
+        % section titles
+        \newcommand{\zzz}[1]{\upspace \0 \textbf{#1} \\ \vspace{-0.8\baselineskip} \hrulefill \vspace{-2px} \\ }
+        \let\oldOne\1\let\oldTwo\2\let\oldThree\3\let\oldFour\4
+        \renewcommand{\1}{\upspace \oldOne  }
+        \renewcommand{\2}{\upspace \oldTwo  }
+        \renewcommand{\3}{\upspace \oldThree}
+        \renewcommand{\4}{\upspace \oldFour }
 
 
-    % \zzz{Objective:}
-    % \1 Seeking Summer 2018 internship in Software Engineering, with particular interest in back-end development.
+        % \zzz{Objective:}
+        % \1 Seeking Summer 2018 internship in Software Engineering, with particular interest in back-end development.
 
-    \zzz{Education:}
-    \1 \textbf{Texas A\&M University}, College Station, TX \hfill Fall 2014 - Present
-    \\ \textbf{Computer Science}, Bachelor of Science
-    \\ Expected Graduation: \textbf{May 2019}
-    \\ GPA:  \textbf{3.4}/4.0
-    % \1 High School: \hfill Graduated May 2014
-    %   \2 \textbf{Home school}, GPA: \textbf{4.0}/4.0, including \textbf{Dual Credit} and \textbf{AP}
+        \zzz{Education:}
+        \1 \textbf{Texas A\&M University}, College Station, TX \hfill Fall 2014 - Present
+        \\ \textbf{Computer Science}, Bachelor of Science
+        \\ Expected Graduation: \textbf{May 2019}
+        \\ GPA\@:  \textbf{3.4}/4.0
 
-    \zzz{Technical Skills:}
-    \1 Programming: 
-    \\
-    \vspace{-\baselineskip}\vspace{-\upspacelength}
-    \begin{tabularx}{\textwidth}{X X X X X X}
-      & Python   & C++ & C\#\upspace \\
-      & MATLAB & \LaTeX & Git\upspace \\
-    \end{tabularx}
-    \vspace{-5px}\upspace
-    \1 
-    Linux, Windows
-    %\hfill\labelitemi\hspace{1px}
-      \1
-    Computer hardware servicing
-    \hfill\hfill
-    \zzz{Projects:}
-      \1 \textbf{Bus Route Webapp} (team of 3) \hfill Spring 2017
-      \\ Designed and programmed the back-end of a webapp that interacted with Texas A\&M's transportation API and mapped bus routes and locations onto Google Maps, using Typescript/Javascript.
-      \1 \textbf{Database} (team of 3) \hfill Spring 2017
-      \\ Designed and programmed a basic implementation of a SQL-like database back-end and corresponding front-end in C++.
-      \1 \textbf{Memory Allocator} (team of 2) \hfill Spring 2017
-      \\ Designed and implemented a buddy-system memory allocator in C++.
-      \1 \textbf{\textit{Asunder}, 2D Video Game} (team of 4) \hfill Fall 2016
-      \\ Programmed and helped design a video game for the Chillenium 48-hour game jam, using C\# and the Unity game engine.
+        \zzz{Technical Skills:}
+        \1 Programming:
+        \\
+        \vspace{-\baselineskip}\vspace{-\upspacelength}
+        \begin{tabularx}{\textwidth}{X X X X X X}
+            & Python   & C++ & C\#\upspace \\
+            & MATLAB & \LaTeX & Git\upspace \\
+        \end{tabularx}
+        \vspace{-5px} \upspace
+        \1 Software:
+        \\
+        \vspace{-\baselineskip}\vspace{-\upspacelength}
+        \vspace{0.5em}
+        \begin{tabularx}{\textwidth}{X X X X}
+            & Microsoft Windows & Microsoft Office & \upspace \\
+            & Linux & Bash & \\
+        \end{tabularx}
+        \1
+        Computer hardware servicing
+        \hfill\hfill
+        \zzz{Projects:}
+        \1 \textbf{Software Rasterizer} \hfill Spring 2018
+        \\ Created a program in C++ that read a 3D model file and rendered it to a 2D image, using an orthographic projection and z-buffering.
+        \1 \textbf{Bus Route Webapp} (team of 3) \hfill Spring 2017
+        \\ Designed and programmed the back-end of a webapp that interacted with Texas A\&M's transportation API and mapped bus routes and locations onto Google Maps, using Typescript/Javascript.
+        \1 \textbf{Database} (team of 3) \hfill Spring 2017
+        \\ Designed and programmed an SQL-like database in C++ in tandem with another team of students. Each team developed and documented a back-end, then swapped to create a front-end for the other team's back-end.
+        \1 \textbf{Memory Allocator} (team of 2) \hfill Spring 2017
+        \\ Designed and implemented a buddy-system memory allocator in C++.
 
-    \zzz{Work Experience:}
-    \1 \textbf{Texas A\&M Live Lab} \hfill Summer 2017
-    \\ \textbf{Student Developer}
-    \\ Worked on the video game \textit{Variant: Prime}, an edutainment calculus game by Triseum. Responsibilities included implementation of an interactive mathematics manipulation environment using C\# and the Unity game engine, as well as development of tools as requested by other teams on the project.
-    \1 \textbf{Teacher Retirement System of Texas, Austin, TX} \hfill Summer 2015
-    \\ \textbf{Technical Support Intern}
-    \\ Helped employees with computer- and network-related issues.
-    \\ Prepared and deployed workstations for new and existing employees.
-    \\ Monitored ongoing computer operations and alerted appropriate staff of problems.
+        \zzz{Work Experience:}
+        \1 \textbf{Texas A\&M Live Lab} \hfill Summer 2017
+        \\ \textbf{Student Developer}
+        \\ Worked on the video game \textit{Variant: Prime}, an edutainment calculus game by Triseum. Responsibilities included implementation of an interactive mathematics manipulation environment using C\# and the Unity game engine, as well as development of tools as requested by other teams on the project.
+        \1 \textbf{Teacher Retirement System of Texas, Austin, TX} \hfill Summer 2015
+        \\ \textbf{Technical Support Intern}
+        \\ Helped employees with computer- and network-related issues.
+        \\ Prepared and deployed workstations for new and existing employees.
+        \\ Monitored ongoing computer operations and alerted appropriate staff of problems.
 
-    \zzz{Honors:}
-    \1 \textbf{TAMU Engineering Honors}
-    \1 Recipient of 4 scholarships funding 70\% of tuition:
-    % \\ 
-    \2 National Merit Scholar Recognition Scholarship
-    \2 National Merit Scholarship
-    \2 President's Endowed Scholarship
-    \2 TAMU CSCE Industrial Affiliate Program Scholarship
+        \zzz{Honors:}
+        \1 \textbf{TAMU Engineering Honors}
+        \1 Recipient of 4 scholarships funding 70\% of tuition:
+        \2 National Merit Scholar Recognition Scholarship
+        \2 National Merit Scholarship
+        \2 President's Endowed Scholarship
+        \2 TAMU CSCE Industrial Affiliate Program Scholarship
 
-    %%\zzz{Organizations:}
-    %%\1 
-    %%Aggie Coding Club
-    %%\hfill\labelitemi\hspace{1px}
-    %%MSC Aggie Cinema
-    %%\hfill\labelitemi\hspace{1px}
-    %%TAMU CSE Honors
+        \zzz{Notable Awards:}
+        \1 \textbf{Eagle Scout} project: educational garden outlining ecological regions of Texas \hfill Fall 2013
 
-    \zzz{Notable Awards:}
-    \1 \textbf{Eagle Scout} project: educational garden outlining ecological regions of Texas \hfill Fall 2013
-    % trailing hfill because otherwise it is too far to the right for no easily discernable reason
-
-  \end{outline}
+    \end{outline}
 \end{flushleft}
 \end{document}
