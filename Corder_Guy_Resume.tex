@@ -5,6 +5,7 @@
 \documentclass[12pt]{article}
 
 \usepackage{verbatim}
+\usepackage{fontawesome}
 \usepackage{ragged2e}
 \usepackage{geometry}
 \usepackage{setspace}
@@ -22,22 +23,27 @@
 %% 3-column header with title %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \noindent
-\begin{minipage}{0.2\linewidth}
+\begin{minipage}{0.3\linewidth}
     \begin{flushleft}
-        \verb|corder@tamu.edu|\\
-        \verb|corder.tech| \\
+        \begin{tabular}{l l}
+            \faicon{link} & \verb|corder.tech| \\
+            \faicon{key} & \verb|keybase.io/corder|
+        \end{tabular}
     \end{flushleft}
 \end{minipage}
 \hfill
-\begin{minipage}{0.5\linewidth}
+\begin{minipage}{0.3\linewidth}
     \begin{center}
-        {\Huge\textbf{James Corder Guy}}
+        {\Huge\textbf{Corder Guy}}
     \end{center}
 \end{minipage}
 \hfill
-\begin{minipage}{0.2\linewidth}
+\begin{minipage}{0.3\linewidth}
     \begin{flushright}
-        \verb|512 994 8895|\\
+        \begin{tabular}{r l}
+            \verb|corder@tamu.edu| & \faicon{envelope-square} \\
+            \verb|512 994 8895| & \faicon{phone-square}
+        \end{tabular}
     \end{flushright}
 \end{minipage}
 
@@ -70,49 +76,42 @@
         \zzz{Education:}
         \1 \textbf{Texas A\&M University}, College Station, TX \hfill Fall 2014 - Present
         \\ \textbf{Computer Science}, Bachelor of Science
+        \\ \textbf{Cybersecurity}, Minor
         \\ Expected Graduation: \textbf{May 2019}
         \\ GPA\@:  \textbf{3.4}/4.0
 
+        \vspace{.25em}
         \zzz{Technical Skills:}
-        \1 Programming:
-        \\
-        \vspace{-\baselineskip}\vspace{-\upspacelength}
+        \1 Programming and software:
+        \\ \vspace{.2em}
         \begin{tabularx}{\textwidth}{X X X X X X}
-            & Python   & C++ & C\#\upspace \\
-            & MATLAB & \LaTeX & Git\upspace \\
+            & Python   & C++ & \LaTeX & \verb|git|\upspace \\
+            & Linux & Windows & \verb|vim| & \verb|gdb|\upspace \\
         \end{tabularx}
-        \vspace{-5px} \upspace
-        \1 Software:
-        \\
-        \vspace{-\baselineskip}\vspace{-\upspacelength}
-        \vspace{0.5em}
-        \begin{tabularx}{\textwidth}{X X X X}
-            & Microsoft Windows & Microsoft Office & \upspace \\
-            & Linux & Bash & \\
-        \end{tabularx}
-        \1
-        Computer hardware servicing
+        \vspace{-.5em}
+        \1 Computer hardware and software support
         \hfill\hfill
+        \vspace{.25em}
         \zzz{Projects:}
+        \1 \textbf{Mobile App} \hfill Spring 2018
+        \\ Designed and programmed the back-end of a mobile app that provided a competitive multi-player exercise plan, using \verb|httpd|, Python, and SQLite.
         \1 \textbf{Software Rasterizer} \hfill Spring 2018
         \\ Created a program in C++ that read a 3D model file and rendered it to a 2D image, using an orthographic projection and z-buffering.
         \1 \textbf{Bus Route Webapp} (team of 3) \hfill Spring 2017
-        \\ Designed and programmed the back-end of a webapp that interacted with Texas A\&M's transportation API and mapped bus routes and locations onto Google Maps, using Typescript/Javascript.
+        \\ Designed and programmed the back-end of a webapp that interacted with Texas A\&M's transportation API and mapped bus routes onto Google Maps, using Typescript.
         \1 \textbf{Database} (team of 3) \hfill Spring 2017
         \\ Designed and programmed an SQL-like database in C++ in tandem with another team of students. Each team developed and documented a back-end, then swapped to create a front-end for the other team's back-end.
-        \1 \textbf{Memory Allocator} (team of 2) \hfill Spring 2017
-        \\ Designed and implemented a buddy-system memory allocator in C++.
 
+        \vspace{.25em}
         \zzz{Work Experience:}
         \1 \textbf{Texas A\&M Live Lab} \hfill Summer 2017
         \\ \textbf{Student Developer}
-        \\ Worked on the video game \textit{Variant: Prime}, an edutainment calculus game by Triseum. Responsibilities included implementation of an interactive mathematics manipulation environment using C\# and the Unity game engine, as well as development of tools as requested by other teams on the project.
+        \\ Worked on the video game \textit{Variant: Prime}, an edutainment calculus game by Triseum. Responsibilities included implementation of an interactive mathematics manipulation environment using C\# and the Unity game engine.
         \1 \textbf{Teacher Retirement System of Texas, Austin, TX} \hfill Summer 2015
         \\ \textbf{Technical Support Intern}
-        \\ Helped employees with computer- and network-related issues.
-        \\ Prepared and deployed workstations for new and existing employees.
-        \\ Monitored ongoing computer operations and alerted appropriate staff of problems.
+        \\ Helped employees with computer- and network-related issues. Responsibilities included preparing and deploying workstations for new and existing employees, as well as monitoring ongoing computer operations and alerting appropriate staff of problems.
 
+        \vspace{.25em}
         \zzz{Honors:}
         \1 \textbf{TAMU Engineering Honors}
         \1 Recipient of 4 scholarships funding 70\% of tuition:
@@ -120,9 +119,9 @@
         \2 National Merit Scholarship
         \2 President's Endowed Scholarship
         \2 TAMU CSCE Industrial Affiliate Program Scholarship
-
+        \vspace{.25em}
         \zzz{Notable Awards:}
-        \1 \textbf{Eagle Scout} project: educational garden outlining ecological regions of Texas \hfill Fall 2013
+        \1 \textbf{Eagle Scout} Project: educational garden outlining ecological regions of Texas. \hfill Fall 2013
 
     \end{outline}
 \end{flushleft}
