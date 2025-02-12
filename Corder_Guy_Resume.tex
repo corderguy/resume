@@ -1,127 +1,221 @@
 % Corder_Guy_Resume.tex
-% (c) Copyright 2015 Josh Wright
-% Adapted with permission
 
-\documentclass[12pt]{article}
+\documentclass[10pt,letterpaper]{article}
 
-\usepackage{verbatim}
-\usepackage{ragged2e}
-\usepackage{geometry}
-\usepackage{setspace}
+\usepackage[
+    ignoreheadfoot,
+    top=0.5in,
+    bottom=0.5in,
+    left=0.75in,
+    right=0.75in,
+    footskip=0in,
+]{geometry}
+\usepackage{titlesec}
 \usepackage{tabularx}
-\usepackage{outlines} % for outline
-\usepackage{paralist} % for compactitem (compact itemize)
-\usepackage{multicol} % for multicolumn layout
-\geometry{letterpaper, margin=1in, top=0.75in}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Corder Guy's Resume},
+    pdfauthor={Corder Guy},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\usepackage{charter}
 
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\fi
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{
+  \needspace{4\baselineskip}
+  \bfseries
+  \large
+}{}{
+  0pt
+}{}[
+  \vspace{1pt}
+  \titlerule
+]
+
+\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}
+    \par
+    \kern
+    \topsep
+    \centering
+    \linespread{1.5}
+  }{
+    \par
+    \kern
+    \topsep
+  }
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0cm}{0cm}
+  }{
+    \end{adjustwidth}
+  }
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+  }{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+  }
+
+\renewcommand{\labelitemi}{\faIcon{arrow-right}}
+\renewcommand{\labelitemii}{$\bullet$}
+\newenvironment{highlights}{
+  \setlist[itemize,1]{leftmargin=20pt}
+  \setlist[itemize,2]{leftmargin=30pt}
+  \begin{itemize}[
+      topsep=0em,
+      parsep=0.25em,
+      partopsep=0em,
+      itemsep=0pt
+    ]
+  }{
+    \end{itemize}
+  }
 
 \begin{document}
+  \newcommand{\AND}{\unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+  }
+  \newsavebox\ANDbox
+  \sbox\ANDbox{$|$}
 
-\pagenumbering{gobble}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 3-column header with title %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\noindent
-\begin{minipage}{0.25\linewidth}
-    \begin{flushleft}
-        \begin{tabular}{l l}
-            \verb|corder.guy@gmail.com| \\
-        \end{tabular}
-    \end{flushleft}
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\linewidth}
-    \begin{center}
-        {\Huge\textbf{Corder Guy}}
-    \end{center}
-\end{minipage}
-\hfill
-\begin{minipage}{0.25\linewidth}
+  \begin{header}
+    \fontsize{25pt}{25pt}\selectfont Corder Guy
+
+    \normalsize
+    \mbox{Houston, TX, USA}
+    \kern 5pt \AND \kern 5pt
+    \mbox{\href{mailto:corder.guy@gmail.com}{corder.guy@gmail.com}}
+    \kern 5pt \AND \kern 5pt
+    \mbox{\href{tel:+1-512-994-8895}{512 994 8895}}
+    \kern 5pt \AND \kern 5pt
+    \mbox{\href{https://corder.tech/}{corder.tech}}
+  \end{header}
+
+  \vspace{5pt}
+
+  \section{Relevant Work Experience}
+  \setcolumnwidth{\fill, 5 cm}
+  \begin{paracol}{2}
+    \textbf{Software Engineer}, Two Sigma -- Houston, TX
+    \switchcolumn
     \begin{flushright}
-        \begin{tabular}{r l}
-          \verb|512 994 8895| \\
-          \verb|Houston, TX, USA|
-        \end{tabular}
+      August 2019 -- November 2024
     \end{flushright}
-\end{minipage}
+  \end{paracol}
 
-\vspace{0.25in}
+  \vspace{-0.25cm}
 
-%%%%%%%%%%%%%%%%%%
-%% main section %%
-%%%%%%%%%%%%%%%%%%
-\begin{flushleft}
-    \begin{outline}[compactitem]
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{\emph{Technical Lead -- OnCall Service}}
+      \\ Led development of a translation layer integrating a vendor alerting product with internal infrastructure. Designed and maintained a high-reliability REST API with complex caching, Slack integration, error handling, and robust scalability.
 
-        %%%%%%%%%%%%%%%%%%%%
-        %% spacing config %%
-        %%%%%%%%%%%%%%%%%%%%
-        \newlength{\upspacelength}
-        \setlength{\upspacelength}{-0.6px}
-        \newcommand{\upspace}{\vspace{\upspacelength}}
-        % section titles
-        \newcommand{\zzz}[1]{\upspace \0 \textbf{#1} \\ \vspace{-0.8\baselineskip} \hrulefill \vspace{-2px} \\ }
-        % \let\oldOne\1\let\oldTwo\2\let\oldThree\3\let\oldFour\4
-        % \renewcommand{\1}{\upspace \oldOne  }
-        % \renewcommand{\2}{\upspace \oldTwo  }
-        % \renewcommand{\3}{\upspace \oldThree}
-        % \renewcommand{\4}{\upspace \oldFour }
+        \begin{highlights}
+          \item Transformed and scaled an intern-led project into a key component of multiple critical systems with \textbf{over 200 internal users.}
+technical issues while delivering \textbf{exceptional user support}.
+          \item Engineered and maintained the backend in Java using Dropwizard and Google Guava, supported by \textbf{extensive integration testing} within our Jenkins CI/CD pipeline.
+          \item Earned consistently \textbf{above-average performance} bonuses for technical excellence, impactful contributions, and \textbf{exceptional user support.}
+        \end{highlights}
 
-        \zzz{Work Experience}
-        \vspace{0.25em}
-          \1 \textbf{Software Engineer, Two Sigma} \hfill August 2019 - Nov 2024
+      \item \textbf{\emph{Selected Contributor -- Top-Priority Cross-Team Initiative}}
+        \\ Hand-picked for a high-visibility task force, restructuring release path controls to ensure accountability and compliance.
 
-          \vspace{0.25em}\textbf{Technical Lead} for OnCall Service, a translation layer between a vendor alerting product and internal infrastructure.
-          Functionality included a REST API, complex caching requirements, Slack integration, error handling, scalability, and reliability.
-          \begin{itemize}
-            \item Drove the product from its origin as an intern project to a key component of several critical systems, with 200+ unique users internally.
-            \item Complemented by manager for my ability to quickly identify and resolve complex issues with excellent user service.
-            \item Wrote and maintained the primary backend in Java using Dropwizard and Google Guava, with extensive integration testing through our CI/CD service.
-            \item Recognized by manager by consistently receiving above-average discretionary performance bonuses.
-          \end{itemize}
+        \begin{highlights}
+          \item \textbf{Led integration with legacy workflows,} collaborating across \textbf{four teams} to gather requirements and implement seamless automation.
+          \item Designed, implemented, and deployed a \textbf{Jira-integrated microservice,} enforcing approval workflows for \textbf{production-critical} releases.
+        \end{highlights}
 
-          \vspace{0.25em}\textbf{Individual Contributor} on a top-priority crossteam initiative to restructure release path controls.
-          \begin{itemize}
-            \item Led integration with existing legacy workflows across multiple teams: gathering requirements, understanding technical problems, learning new tools and API frameworks.
-            \item Drove implementation of new microservice to monitor Jira queues and ensure accountability and approval for production-critical releases.
-          \end{itemize}
+      \item \textbf{\emph{Intern Manager and Mentor}}
 
-          \vspace{0.25em}\textbf{Individual Contributor} on a crossteam pilot of Web Components technology.
-          Worked with two other teams to rewrite existing web UIs to reduce code size, duplication, and technical debt by an estimated 70\%.
+      \begin{highlights}
+        \item Selected \textbf{three times} to \textbf{mentor engineering interns,} providing \textbf{technical guidance and professional development.}
+        \item Provided \textbf{code reviews} and technical resources, ensuring interns contributed \textbf{production-level} code to three products.
+      \end{highlights}
 
-          \vspace{0.25em}\textbf{Intern Manager and Buddy}
-          Selected by manager to provide guidance, mentoring, and technical coaching for three interns.
+      \item \textbf{\emph{Technical Interviewer}}
+        \\ Conducted \textbf{50+ technical interviews} for internship and full-time candidates, assessing skills in \textbf{algorithms, data structures, and backend development.}
 
-          \vspace{0.25em}\textbf{Interviewer}
-          Trusted and relied upon to administer one-hour technical interviews and deliver detailed feedback for more than 50 applicants for internship and full-time positions.
+        \begin{highlights}
+          \item Delivered \textbf{prompt and detailed candidate feedback,} helping improve hiring decisions and refine interview processes.
+          \item Provided training and advice to new interviewers, ensuring consistency in evaluations.
+        \end{highlights}
 
-          \vspace{0.25em}\textbf{Instructor} for multiple ``Hacker Lab'' courses, including amateur radio, soldering, and 3D printing.
+      \item \textbf{\emph{Individual Contributor -- Web Components}}
+        \\ Volunteered for a \textbf{crossteam pilot} of Web Components technology and \textbf{re-engineered} two independently- \\developed UI screens into a unified component, reducing code duplication by \textbf{70\%} and \textbf{streamlining development workflows}.
 
-        \vspace{.25em}
-        \zzz{Technical Expertise}
-          \vspace{.25em}
-          \hspace{0.05\textwidth}\begin{tabularx}{0.9\textwidth}{X X X X X X}
-            Java   & Python      & TypeScript  & Angular \\
-            Flask  & Marshmellow & CI/CD       & Unit Testing \\
-            Linux  & \verb|git|  & REST APIs  & Web Components \\
-          \end{tabularx}
-          \vspace{.25em}
+      \item \textbf{\emph{Hacker Lab Instructor}}
+        \\ Designed and taught \textbf{hands-on workshops} on amateur radio, soldering, and 3D printing for \textbf{20+ participants.}
+    \end{highlights}
+  \end{onecolentry}
 
-        \vspace{.25em}
-        \zzz{Technical Experience}
-          \vspace{.25em}
-          \hspace{0.05\textwidth}\begin{tabularx}{0.9\textwidth}{X X X X X X}
-            Windows  & Common Lisp  & JavaScript  & Ansible \\
-            \verb|vim| & \verb|emacs| & Code Generation & Jira \\
-            C & C++ & Rust
-          \end{tabularx}
-          \vspace{.25em}
+  \section{Technical Experience and Expertise}
+  \begin{onecolentry}
+    \begin{tabular}{l l}
+      \textbf{Languages} & Java, Python, TypeScript, HTML, CSS \\
+      \textbf{Frameworks} & Angular, Dropwizard, Flask, Web Components \\
+      \textbf{Tools} & Git, Jira, GitHub, GitLab \\
+      \textbf{Technologies} & Unit Testing, CI/CD, REST APIs, Linux, Windows \\
+    \end{tabular}
+  \end{onecolentry}
 
-        \zzz{Education}
-        \1 \textbf{Texas A\&M University}, College Station, TX \hfill September 2014 - May 2019
-        \\ \textbf{Computer Science}, Bachelor of Science
-        \\ \textbf{Cybersecurity}, Minor
-        \\ \textbf{Mathematics}, Minor
-    \end{outline}
-\end{flushleft}
+  \section{Education}
+  \setcolumnwidth{\fill, 5 cm}
+  \begin{paracol}{2}
+    \textbf{Texas A\&M University}
+    \switchcolumn
+    \begin{flushright}
+      September 2014 -- May 2019
+    \end{flushright}
+  \end{paracol}
+
+  \vspace{-0.3cm}
+
+  \begin{onecolentry}
+    \hspace{10pt} \textbf{\emph{Computer Science}}, Bachelor of Science \\
+    \hspace{10pt} \textbf{\emph{Cybersecurity}}, Minor \\
+    \hspace{10pt} \textbf{\emph{Mathematics}}, Minor \\
+  \end{onecolentry}
+
 \end{document}
