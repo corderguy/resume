@@ -17,6 +17,7 @@
 \usepackage{enumitem}
 \usepackage{fontawesome5}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[
     pdftitle={Corder Guy's Resume},
     pdfauthor={Corder Guy},
@@ -97,8 +98,9 @@
     \endonecolentry
   }
 
-\renewcommand{\labelitemi}{\faIcon{arrow-right}}
-\renewcommand{\labelitemii}{$\bullet$}
+% \renewcommand{\labelitemi}{\faIcon{terminal}}
+\renewcommand{\labelitemi}{$\blacktriangleright$}
+\renewcommand{\labelitemii}{$\vartriangleright$}
 \newenvironment{highlights}{
   \setlist[itemize,1]{leftmargin=20pt}
   \setlist[itemize,2]{leftmargin=30pt}
@@ -134,6 +136,16 @@
   \end{header}
 
   \vspace{5pt}
+
+  % \section{Core Competencies}
+  % \begin{onecolentry}
+  %   \begin{tabular}{l l l}
+  %     Software Development & Back-End Engineering & REST API Development \\
+  %     High-Availability Systems & Infrastructure Automation & CI/CD Pipelines \\
+  %     Incident Management & Agile Methodologies & Technical Mentoring \\
+  %     Cross-Team Collaboration & Full-Stack Development & \\
+  %   \end{tabular}
+  % \end{onecolentry}
 
   \section{Relevant Work Experience}
   \setcolumnwidth{\fill, 5 cm}
