@@ -1,33 +1,36 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 \usepackage[top=0.5in,bottom=0.5in,left=0.75in,right=0.75in]{geometry}
 \usepackage{enumitem}
-\usepackage{hyperref}
 \usepackage{xcolor}
-\usepackage{ocg-p} % for hidden layers
 \usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{ocg-p}
 \hypersetup{
-  colorlinks=true,
-  urlcolor=black,
-  pdfencoding=auto,
   pdfauthor={Corder Guy},
-  pdftitle={Corder Guy's Resume}
+  pdftitle={Corder Guy's Resume},
+  pdfsubject={Software Engineer Resume},
+  pdfkeywords={backend, infrastructure, Two Sigma},
+  pdfcreator={LaTeX with hyperref}
 }
 
-\pagestyle{empty} % removes page numbering
+\pagestyle{empty}
 
 \setlist[itemize]{left=0pt, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt}
 
-\titlespacing*{\section}{0pt}{0.6em}{0.8em}
+\titlespacing*{\section}{0pt}{0.2em}{0.5em}
 
-\renewcommand{\labelitemi}{\raisebox{0.125em}{\small$\bullet$}}
-%\renewcommand{\labelitemii}{\raisebox{0.2em}{\tiny$\circ$}}
+\renewcommand{\labelitemi}{\textemdash}
+\renewcommand{\labelitemii}{\textemdash}
+\renewcommand{\labelitemiii}{\textemdash}
+\renewcommand{\labelitemiv}{\textemdash}
 
 \begin{document}
 
 % Header
 \begin{center}
   {\Huge\textbf{Corder Guy}} \\
-  \vspace{1em}
+  \vspace{0.7em}
   {\Large\textbf{Software Engineer -- Backend \& Infrastructure}} \\
   \href{mailto:corder.guy@gmail.com}{\texttt{corder.guy@gmail.com}}
   \textbar{}
@@ -36,77 +39,91 @@
   Houston, TX, USA
 \end{center}
 
-\newcommand{\sectionline}{\vspace{-0.75em}\hrule\vspace{0.75em}}
-\newcommand{\mainsection}[1]{\section*{#1} \sectionline}
+\newcommand{\sectionline}{\vspace{-0.75em}\hrule\vspace{0.5em}}
+\newcommand{\resumesection}[1]{\section*{{\fontsize{17}{19}\selectfont #1}} \sectionline}
 
 % Summary
-\mainsection{Summary}
-Experienced software engineer with 5+ years building backend and full-stack systems at scale. Led infrastructure and platform projects supporting hundreds of users at Two Sigma. Expertise in REST APIs, CI/CD pipelines, and system reliability. Strong track record of delivering production software, mentoring developers, and driving cross-team initiatives in fast-paced environments.
-%Results-driven full-stack software engineer with 5+ years of expertise developing and scaling reliable, maintainable systems within fast-paced environments. Proven ability to rapidly master new technologies and solve complex, unfamiliar problems. Recognized for strong mentorship and leadership, committed to fostering collaborative team environments and delivering high-quality software solutions.
-% I'm a software engineer with 5+ years of experience building reliable systems in fast-moving environments.
-% I ramp up quickly in new domains and enjoy turning unfamiliar problems into clean, maintainable solutions.
-% I'm also a strong mentor and collaborator committed to helping teams ship great software.
+\resumesection{Professional Profile}
+Backend-focused engineer with 5+ years at Two Sigma building internal platforms, APIs, and infrastructure. Excels in ambiguous environments by quickly mastering new domains and translating unclear requirements into technical solutions. Led architecture for firmwide systems used by 1,800+ engineers while fostering cross-team collaboration and establishing governance standards.
 
 \newcommand{\skillsection}[2]{\textbf{#1:} \\ \hspace*{1em} #2}
 
 % Technical Skills
-\mainsection{Technical Skills}
-\skillsection{Languages \& Frameworks}{Java, Python, TypeScript, HTML/CSS, Angular, React, Dropwizard, Flask, Web Components} \\
-\skillsection{Tools \& Ecosystems}{Git, GitHub/GitLab, Jira, Jenkins, ELK Stack, Linux, Windows, REST APIs, CI/CD Pipelines} \\
-\skillsection{Collaboration \& Practices}{Unit \& Integration Testing, Agile Methodologies, Technical Mentorship, Cross-team Collaboration}
+\resumesection{Technical Skills}
+\skillsection{Languages \& Frameworks}{}
+Java, Python, JavaScript/TypeScript, HTML/CSS, React, Flask, Dropwizard, Guava \\
+\skillsection{Systems \& Tooling}{}
+Git, GitHub/GitLab, Linux, Jenkins, CI/CD, integration testing, RESTful API design, API implementation \\
+\skillsection {Infrastructure \& Engineering}{}
+Slack API, Jira API, Web Components, deployment automation, system integration, reliability engineering
+
 
 \newcommand{\sectionentry}[2]{\textbf{#1} \hfill \emph{#2}}
-\newcommand{\roleentry}[1]{\item \textbf{#1}}
+
+\newcommand{\roleentry}[1]{\textbf{#1}}
+
 \newenvironment{role}[1]{
   \roleentry{#1}
-  \begin{itemize}
+  \begin{itemize}[left=1.5em]
 }{
   \end{itemize}
 }
 
+\newcommand{\jobtitle}[2]{\sectionentry{{\Large #1}}{\large #2} \vspace{0.5em}}
+
+\newcommand{\jobresponsibilities}[1]{%
+    \noindent \roleentry{{\large #1}}\vspace{0.25em}%
+}
+
+\renewcommand{\subsection}[1]{\sectionentry{{\large #1}}{}}
+
 % Work Experience
-\mainsection{Work Experience}
-\sectionentry{Software Engineer \textbar{} Two Sigma \textbar{} Houston, TX}{August 2019 -- November 2024}
-\begin{itemize}
-  \begin{role}{Technical Lead – Infrastructure Engineering}
-    \item Led design and implementation of a translation service connecting a vendor alerting platform to internal infrastructure.
-    \item Delivered the majority of the code, wrote internal documentation, and onboarded teams.
-    \item Maintained a high-reliability REST API with caching, Slack integration, and robust error handling.
-    \item Scaled an intern prototype into a platform used by 200+ internal users.
-    \item Built Java backend services with Dropwizard and CI/CD pipelines in Jenkins.
-  \end{role}
+\resumesection{Work Experience}
 
-  \begin{role}{Software Developer – Model Release Controls}
-    \item Volunteered for a cross-team compliance initiative following a firmwide model deployment incident.
-    \item Independently gathered requirements from the Modeling Data Engineering team and designed an approval-tracking system integrated with Jira.
-    \item Built a microservice that assigned release IDs, monitored Jira workflows, and surfaced progress to modelers and pipeline automation.
-  \end{role}
-
-  \begin{role}{Mentorship, Hiring, and Culture}
-    \item Mentored three interns (two shipped to prod); selected projects and provided technical guidance.
-    \item Defined goals and requirements for one intern beyond standard mentorship.
-    \item Conducted 50+ full-time interviews and trained new interviewers in structured evaluation techniques.
-    \item Ran office-wide Hacker Lab workshops on soldering, amateur radio, and 3D printing to foster hands-on creativity and team engagement.
-  \end{role}
-
-  \begin{role}{UI Modernization}
-    \item Volunteered to pilot adoption of Web Components as a cross-team UI strategy at the firm.
-    \item Collaborated with engineers from other teams to unify two parallel UIs into a single shared component.
-    \item Co-designed and deployed a streamlined UI that reduced total lines of code by 70\% and improved maintainability.
-  \end{role}
+\jobtitle{Software Engineer \textbar{} Two Sigma \textbar{} Houston, TX}{August 2019 -- November 2024} \\
+\jobresponsibilities{General Responsibilities}
+\begin{itemize}[left=1.5em]
+    \item Developed and maintained backend systems and internal tools for engineering support, compliance, and operational efficiency.
+    \item Delivered and maintained REST APIs, CI/CD pipelines, and automated integrations across tools including Slack and Jira.
+    \item Supported reliability engineering, deployment automation, and service integration for production workflows.
+    \item Collaborated regularly with infrastructure, data, and frontend teams to improve internal developer experience and support systems at scale.
 \end{itemize}
 
+\vspace{0.5em}
+\noindent
+\jobresponsibilities{Selected Projects \& Initiatives}
+
+\begin{role}{Model Release Governance -- Approval Orchestration via Workflow Engine}
+    \item Took ownership of an ambiguous, high-priority compliance need with a tight deadline; independently investigated approval constraints and existing workflows.
+    \item Designed and implemented “MRS Jira," a service integrating Jira and Temporal to enforce approval policy through automated state transitions.
+    \item Controlled release gating without developer disruption; system became standard for model and pipeline deployments firmwide, meeting compliance requirements within projected timeframe.
+\end{role}
+
+\begin{role}{Developer Support Integration -- On-Call Scheduling Layer}
+    \item Built a backend integration service surfacing on-call coverage and contact metadata used by 1,800+ engineers within existing tools like the internal product catalog.
+    \item Eliminated critical outage incidents caused by direct calls exceeding vendor's strict firmwide rate limit.
+    \item Exposed simplified REST API over vendor alerting system with complex caching and supplemental Slack-based UX; system saw daily org-wide usage with minimal required behavior change.
+\end{role}
+
+\begin{role}{UI Modernization}
+    \item Volunteered beyond core role to partner with JobSystem team on consolidating UIs using shared Web Components, reducing total code by 70\%.
+    \item Developed and integrated the modular UI into Support Manager, aligning with frontend platform standards and internal migration goals.
+\end{role}
+
+\begin{role}{Mentorship, Hiring, and Culture}
+    \item Mentored interns who shipped production-level backend code; conducted 50+ technical interviews and trained new interviewers.
+    \item Led internal workshops on ham radio, 3D printing, and soldering to foster technical curiosity and community.
+\end{role}
+
 % Education
-\mainsection{Education}
+\resumesection{Education}
 \sectionentry{Texas A\&M University \textbar{} College Station, TX}{Graduated May 2019} \\
 Bachelor of Science in Computer Science \\
 Minors: Cybersecurity, Mathematics
 
-% Optional: ATS keyword enrichment (hidden layer)
-\vspace{-20em}
-\begin{ocg}{ATS Keywords}{atskeywords}{0}\textcolor{white}{{\fontsize{5}{1} \selectfont
-%Software Engineering, Infrastructure Engineering, DevOps, Agile Development, Cross-functional Collaboration, Java, Python, TypeScript, Angular, React, Dropwizard, Flask, Web Components, REST APIs, CI/CD, Jenkins, GitHub, GitLab, Jira, Unit Testing, Mentorship, Interviewing, Monorepo, OpenAPI, Microservices, Documentation, Technical Leadership, Production Systems, Scalable Architecture, Approval Workflows, Intern Projects, Code Reviews, Front End, Back End, Full-Stack, Fullstack
-}}
-\end{ocg}
-
+\AtEndDocument{
+  \renewcommand{\thefootnote}{}
+  \renewcommand{\footnotemark}{}
+  \renewcommand{\footnotetext}{}
+}
 \end{document}
